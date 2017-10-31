@@ -15,10 +15,6 @@ namespace vidRent.Controllers
             {
                 new Customer {Name = "cust 1"},
                 new Customer {Name = "cust 2"},
-                new Customer {Name = "cust 3"},
-                new Customer {Name = "cust 4"},
-                new Customer {Name = "cust 5"},
-                new Customer {Name = "cust 6"}
 
             };
 
@@ -28,7 +24,7 @@ namespace vidRent.Controllers
                 Customers = customers
             };
 
-        return View(viewModel);
+            return View(viewModel);
         }
     }
 }
