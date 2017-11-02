@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using vidRent.Models;
+using vidRent.ViewModels;
+using static vidRent.Models.Customer;
+
 
 namespace vidRent.Controllers
 {
@@ -12,39 +15,38 @@ namespace vidRent.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = new List<Customer>
+
+            List<Customer> customers = new List<Customer>();
+            customers.Add(new Customer { Name = "Cust1", Id = 1 });
+            customers.Add(new Customer { Name = "Cust2", Id = 2 });
+            customers.Add(new Customer { Name = "Cust3", Id = 3 });
+            customers.Add(new Customer { Name = "Cust4", Id = 4 });
+
+            var viewModel = new CustomerIndex
             {
-                new Customer
-                {
-                    Name = "cust 1",
-                    Id = 1
-                },
-                new Customer
-                {
-                    Name = "cust 2",
-                    Id = 2
-                },
+                Customers = customers
             };
-            return View();
+
+            return View(viewModel);
         }
         public ActionResult Details(int id)
         {
-            var customers = new List<Customer>
+
+            List<Customer> customers = new List<Customer>();
+            customers.Add(new Customer { Name = "Cust1", Id = 1 });
+            customers.Add(new Customer { Name = "Cust2", Id = 2 });
+            customers.Add(new Customer { Name = "Cust3", Id = 3 });
+            customers.Add(new Customer { Name = "Cust4", Id = 4 });
+            
+            var custDetail = customers.FirstOrDefault(c => c.Id == id);
+
+            var viewModel = new CustomerDetailsViewModel    
             {
-                new Customer
-                {
-                    Name = "cust 1",
-                    Id = 1
-                },
-                new Customer
-                {
-                    Name = "cust 2",
-                    Id = 2
-                },
+                CustDetail = custDetail,
+                Customers = customers
             };
-            return View();
+
+            return View(viewModel);
         }
-
-
     }
 }

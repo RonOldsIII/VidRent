@@ -1,8 +1,31 @@
-﻿@model dynamic
+﻿@model vidRent.ViewModels.CustomerIndex
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Customers";
     //Layout = "_Layout";
 }
 
-<h2>Customer</h2>
+<h2>Customers</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    <text> No Customers</text>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Customer Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+            <tr> 
+                <td><a href="Details\@customer.Id">@customer.Name</a></td> 
+            </tr>
+        }
+        </tbody>
+    </table>
+}

@@ -3,9 +3,9 @@ using vidRent.Models;
 
 namespace vidRent.ViewModels
 {
-    public class RandomMovieViewModel
+    public class CustomerDetailsViewModel
     {
-        public Movie Movie { get; set; }
         public List<Customer> Customers { get; set; }
+        public Customer CustDetail { get; set; }
     }
 }

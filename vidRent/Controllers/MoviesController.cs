@@ -7,10 +7,10 @@ namespace vidRent.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
+        //GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie {Name = "Shrek!"};
+            var movie = new Movie { Name = "Shrek!" };
             var customers = new List<Customer>
             {
                 new Customer {Name = "cust 1"},

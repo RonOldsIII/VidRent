@@ -1,5 +1,17 @@
-﻿@{
-    ViewBag.Title = "Customers";
+﻿@model vidRent.ViewModels.CustomerDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Customers</h2>
+<h2>Customer Details</h2>
+@if (Model.CustDetail.Name != null)
+{
+    
+    <p>@Model.CustDetail.Name</p>
+}
+else
+{
+    <P> Invalid Customer </P>
+}
+

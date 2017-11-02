@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using vidRent.Models;
 
 namespace vidRent.ViewModels
 {
-    public class RandomMovieViewModel
+    public class CustomerIndex
     {
-        public Movie Movie { get; set; }
         public List<Customer> Customers { get; set; }
     }
 }
